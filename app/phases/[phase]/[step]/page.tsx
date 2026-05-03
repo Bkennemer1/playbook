@@ -2,7 +2,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { PHASES, findStep, adjacentSteps, ROLE_META } from '@/lib/phases';
-import dynamic from 'next/dynamic';
 import fs from 'fs';
 import path from 'path';
 
@@ -12,22 +11,23 @@ export function generateStaticParams() {
   return params;
 }
 
-export default async function StepPage({ params }: { params: { phase: string; step: string } }) {
-  const found = findStep(params.phase, params.step);
+export default async function StepPage({ params }: { params: Promise<{ phase: string; step: string }> }) {
+  const { phase: phaseSlug, step: stepSlug } = await params;
+  const found = findStep(phaseSlug, stepSlug);
   if (!found) notFound();
   const { phase, step } = found;
 
   const meta = ROLE_META[step.role];
-  const { prev, next } = adjacentSteps(params.phase, params.step);
+  const { prev, next } = adjacentSteps(phaseSlug, stepSlug);
 
   // Try to load the MDX file. If it doesn't exist, show the placeholder.
-  const mdxPath = path.join(process.cwd(), 'content', 'phases', params.phase, `${params.step}.mdx`);
+  const mdxPath = path.join(process.cwd(), 'content', 'phases', phaseSlug, `${stepSlug}.mdx`);
   const exists = fs.existsSync(mdxPath);
 
   let MDXContent: any = null;
   if (exists) {
     try {
-      MDXContent = (await import(`@/content/phases/${params.phase}/${params.step}.mdx`)).default;
+      MDXContent = (await import(`@/content/phases/${phaseSlug}/${stepSlug}.mdx`)).default;
     } catch (e) {
       MDXContent = null;
     }

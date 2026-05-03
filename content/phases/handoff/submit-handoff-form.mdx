@@ -1,0 +1,58 @@
+<div className="step-page-section">
+  <h2>Overview</h2>
+  <p>The processing handoff form is the formal trigger that moves a loan from LO ownership into the processing pipeline. When you submit this form, the pipeline app generates Phase 1 tasks for Hunter and Danielle automatically — no email is required.</p>
+  <p>Until this form is submitted, the loan is still considered LO-owned even if disclosures are out. <strong>The form is the handoff.</strong></p>
+</div>
+
+<div className="step-page-section">
+  <h2>Before you start</h2>
+  <ul>
+    <li>Application is in Arive and a loan number has been generated</li>
+    <li>Pre-approval has been issued</li>
+    <li>You have lender, close date, and appraisal status decided</li>
+    <li>You know whether the borrower has an HOI provider already</li>
+    <li>Rate lock decision has been made (locked / floating / pending)</li>
+  </ul>
+</div>
+
+<div className="step-page-section">
+  <h2>How to submit the form</h2>
+  <ol>
+    <li>Go to <a href="https://pipeline.guaranteemc.com" target="_blank" rel="noopener"><strong>pipeline.guaranteemc.com</strong></a> and sign in</li>
+    <li>Click <strong>Pass to Processing</strong> in the top nav</li>
+    <li>Fill in the transaction details — borrower name, loan number, transaction type, lender, close date, property address, vesting</li>
+    <li>Set the appraisal status (Not needed / Not yet ordered / Already ordered)</li>
+    <li>Set the HOI status — does the borrower have a provider, or do we need a quote?</li>
+    <li>Mark the rate lock status</li>
+    <li>Check off any documents already received</li>
+    <li>Add notes for the team if there's anything special they need to know</li>
+    <li>Click <strong>Generate handoff email</strong></li>
+  </ol>
+</div>
+
+<div className="callout info">
+  <strong>What happens next:</strong> The form generates a structured email summary you can review, but more importantly it triggers <code>create_handoff_tasks()</code> in the pipeline backend. Hunter and Danielle will see new files in their queues within a few seconds.
+</div>
+
+<div className="step-page-section">
+  <h2>Common issues</h2>
+  <h3>The form won't submit — required fields error</h3>
+  <p>Borrower name and transaction type are required. Everything else is technically optional, but skipping fields means Hunter and Danielle will have to ask you for that info anyway. Fill in everything you know.</p>
+
+  <h3>I submitted the form but no tasks appeared in the queue</h3>
+  <p>Refresh the queue page first. If still missing after 30 seconds, check that the loan number you entered matches the Arive file exactly. If it doesn't, the loan won't link properly. Contact Bryce.</p>
+
+  <h3>I need to update something I submitted</h3>
+  <p>Don't re-submit the form — that creates duplicate tasks. Just message Hunter or Danielle directly with the correction, or update the loan in Arive and let them know.</p>
+</div>
+
+<div className="step-page-section">
+  <h2>Who to ask if you're stuck</h2>
+  <p>Form not loading or submitting: Bryce or Dean.<br />Question about what to put in a field: ask Hunter (he sees these forms every day).</p>
+</div>
+
+<div className="step-meta">
+  <span>Last reviewed: April 2026</span>
+  <span className="dot">·</span>
+  <span>Maintained by: Bryce</span>
+</div>

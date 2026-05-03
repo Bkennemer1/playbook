@@ -1,0 +1,72 @@
+{/* TEMPLATE — copy this for any new step content file
+    Save as: /content/phases/[phase-slug]/[step-slug].mdx
+    All sections are optional — delete what you don't need.
+*/}
+
+<div className="step-page-section">
+  <h2>Overview</h2>
+  <p>One or two sentences explaining what this step is, why it matters, and when it happens in the loan timeline.</p>
+</div>
+
+<div className="step-page-section">
+  <h2>Before you start</h2>
+  <p>Anything that needs to be true before this step can begin — prerequisites, prior steps that must be complete, info you need on hand.</p>
+  <ul>
+    <li>Disclosures must be signed</li>
+    <li>You'll need the borrower's contract handy</li>
+  </ul>
+</div>
+
+<div className="step-page-section">
+  <h2>Click-by-click in Arive</h2>
+  <ol>
+    <li>From the Arive home screen, click <strong>Loans</strong> in the left sidebar.</li>
+    <li>Find the borrower's file and click their name to open it.</li>
+    <li>...</li>
+  </ol>
+  {/* Drop in screenshots like this — save them to /public/screenshots/[phase]/ */}
+  {/* <img src="/screenshots/processing/file-setup-step-2.png" alt="Arive file setup screen" /> */}
+</div>
+
+<div className="step-page-section">
+  <h2>Email template</h2>
+  <p>Send this when you've initiated the title request:</p>
+  <div className="email-template">{`Subject: Title order initiated — [Borrower Name]
+
+Hi [Title Agent],
+
+Please open title for the file below. Closing is targeted for [date].
+
+Borrower: [Name]
+Property: [Address]
+Loan #: [Arive #]
+Lender: [Lender]
+
+Thanks,
+[Your Name]
+Guarantee Mortgage`}</div>
+</div>
+
+<div className="step-page-section">
+  <h2>Common issues</h2>
+  <h3>What if the borrower hasn't returned the disclosures?</h3>
+  <p>Hunter follows up. Don't proceed with title or appraisal until disclosures are signed and intent to proceed is confirmed.</p>
+
+  <h3>What if title says they need additional vesting info?</h3>
+  <p>Pull the contract and check signature page. If unclear, escalate to the LO.</p>
+</div>
+
+<div className="callout warn">
+  <strong>Watch out:</strong> Don't order the appraisal before disclosures are signed and intent to proceed is confirmed. Doing so creates a compliance issue.
+</div>
+
+<div className="step-page-section">
+  <h2>Who to ask if you're stuck</h2>
+  <p>First: Bryce or Dean.<br />Lender-specific questions: contact the lender's account executive.</p>
+</div>
+
+<div className="step-meta">
+  <span>Last reviewed: [date]</span>
+  <span className="dot">·</span>
+  <span>Maintained by: Bryce</span>
+</div>

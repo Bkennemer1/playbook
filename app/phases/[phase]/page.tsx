@@ -7,8 +7,9 @@ export function generateStaticParams() {
   return PHASES.map(p => ({ phase: p.slug }));
 }
 
-export default function PhasePage({ params }: { params: { phase: string } }) {
-  const phase = findPhase(params.phase);
+export default async function PhasePage({ params }: { params: Promise<{ phase: string }> }) {
+    const { phase: phaseSlug } = await params;
+    const phase = findPhase(phaseSlug);
   if (!phase) notFound();
 
   const isSystem = phase.primaryRole === 'system';

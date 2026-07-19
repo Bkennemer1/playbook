@@ -52,11 +52,11 @@ export const PHASES: Phase[] = [
     number: 'PHASE 2',
     letter: 'B',
     title: 'Document Intake',
-    subtitle: 'Borrower self-uploads · LOA verifies · Arive: Loan Setup',
-    primaryRole: 'hunter',
+    subtitle: 'LO curates the needs list · borrower self-uploads · Arive: Loan Setup',
+    primaryRole: 'lo',
     steps: [
-      { slug: 'borrower-portal-upload',  title: 'Borrower uploads docs via portal', role: 'borrower', summary: 'Self-serve upload of income, ID, contract, statements.', status: 'skeleton' },
-      { slug: 'verify-intake-docs',      title: 'Verify intake docs & follow up on gaps', role: 'hunter', summary: 'LOA reviews against checklist and chases missing items.', status: 'skeleton' },
+      { slug: 'generate-needs-list',     title: 'Generate & curate the client needs list', role: 'lo', summary: 'Auto-generate the basics; manually add the custom needs Arive misses.', status: 'draft' },
+      { slug: 'borrower-portal-upload',  title: 'Borrower uploads docs via portal', role: 'borrower', summary: 'Self-serve upload against the needs list; items pend until reviewed.', status: 'draft' },
     ],
   },
   {
@@ -64,10 +64,11 @@ export const PHASES: Phase[] = [
     number: 'PHASE 3',
     letter: 'C',
     title: 'Handoff to Processing',
-    subtitle: 'LO submits handoff form · pipeline app generates Phase 1 tasks',
+    subtitle: 'LO submits handoff form · Hunter takes over doc verification',
     primaryRole: 'lo',
     steps: [
       { slug: 'submit-handoff-form',     title: 'Submit processing handoff form', role: 'lo', summary: 'Pipeline Manager form triggers create_handoff_tasks().', status: 'draft' },
+      { slug: 'verify-intake-docs',      title: 'Review file & verify docs', role: 'hunter', summary: 'Hunter\'s first touch: review uploads against the needs list, chase gaps.', status: 'skeleton' },
     ],
   },
   {

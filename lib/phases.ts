@@ -44,7 +44,7 @@ export const PHASES: Phase[] = [
       { slug: 'take-application',        title: 'Take the application', role: 'lo', summary: 'Two paths: phone-taken by LO vs. borrower self-serves via online URL.', status: 'draft' },
       { slug: 'pull-credit',             title: 'Pull credit', role: 'lo', summary: 'Soft or hard pull based on borrower preference; tri-merge in Arive.', status: 'draft' },
       { slug: 'run-aus',                 title: 'Run DU/LP (AUS)', role: 'lo', summary: 'Submit to AUS, review findings, troubleshoot if needed.', status: 'draft' },
-      { slug: 'issue-preapproval',       title: 'Issue pre-approval letter', role: 'lo', summary: 'Generate and send pre-approval; track who has it.', status: 'skeleton' },
+      { slug: 'issue-preapproval',       title: 'Issue pre-approval letter', role: 'lo', summary: 'Generate and send pre-approval; track who has it.', status: 'draft' },
     ],
   },
   {

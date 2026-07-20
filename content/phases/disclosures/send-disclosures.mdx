@@ -1,0 +1,72 @@
+<div className="step-page-section">
+  <h2>Overview</h2>
+  <p>The LO owns initial disclosures — prepped, sent, and e-signed before the file is handed to processing. This is the compliance-heaviest moment in the LO's portion of the file: the Loan Estimate and initial disclosure package, delivered inside the TRID window, with intent to proceed captured.</p>
+  <p>The mechanics run through the <strong>lender's portal</strong>, not Arive — and each lender's portal works a little differently. The flow below is the common shape; lender-specific quirks live in each portal.</p>
+</div>
+
+<div className="step-page-section">
+  <h2>The TRID clock</h2>
+  <p>The Loan Estimate must go out within <strong>3 business days of application</strong>. The lender systems enforce this — you won't be able to quietly miss it — but understand what's driving the urgency: once the application is complete, the clock is running, and disclosure prep is a now-task, not a when-I-get-to-it task.</p>
+</div>
+
+<div className="step-page-section">
+  <h2>The sequence</h2>
+
+  <h3>1. Build the fees</h3>
+  <p>Start from the <strong>fee template for your lender</strong> and adjust for the file. The LE is only as good as the fee sheet behind it.</p>
+
+  <h3>2. Export the file from Arive → import to the lender portal</h3>
+  <p>Export the loan from Arive (MISMO/FNM file) and import it into the lender's portal. The export carries whatever is in Arive — accurate or not — which is one more reason the 1003 review upstream matters. Garbage in Arive becomes garbage on the LE.</p>
+  <p><em>Scribe walkthrough pending — exporting the MISMO/FNM file from Arive.</em></p>
+
+  <h3>3. Generate and send the disclosure package</h3>
+  <p>The lender's portal generates the LE and initial disclosure package and sends it to the borrower for e-signature. The borrower signs <strong>in the lender's system</strong> — they'll get the email from the lender's platform, not from Arive.</p>
+  <p>Tell the borrower to expect it: which lender's name will be on the email, and that it needs signing promptly. An unexpected email from a lender they've never heard of is an email that sits unopened — or gets deleted as phishing.</p>
+
+  <h3>4. Intent to proceed</h3>
+  <p>Captured as a checkbox/acknowledgment inside the eSign package — signing the package captures it. No separate step.</p>
+
+  <h3>5. Monitor signatures — chase at 48 hours</h3>
+  <p>If the package isn't signed within <strong>48 hours</strong>, the LO chases — personal text or call, not another automated email. Unsigned disclosures stall everything downstream: the handoff shouldn't happen until disclosures are signed, which means Hunter and Danielle can't start.</p>
+</div>
+
+<div className="callout warn">
+  <strong>When signed: flip the Arive milestone to Disclosure Sent — manually, every time.</strong> Same pattern as Pre-Approved: nothing updates it automatically, and the internal pipeline tools key off the milestone. This milestone is also the gate for the handoff — a file whose milestone never moved is a file the system thinks is still in pre-approval.
+</div>
+
+<div className="step-page-section">
+  <h2>Fee callback: the credit report fee</h2>
+  <p>From <a href="/phases/application/pull-credit">Pull credit</a>: if you paid for the credit pull and want reimbursement at closing, the credit report fee <strong>must be a line item on these initial disclosures.</strong> This is the moment that decision gets locked in. No disclosure, no reimbursement.</p>
+</div>
+
+<div className="step-page-section">
+  <h2>Common pitfalls</h2>
+
+  <h3>Not warning the borrower about the lender email</h3>
+  <p>The signing request comes from a company name the borrower may not recognize. Two minutes of expectation-setting prevents three days of "check your spam folder."</p>
+
+  <h3>Exporting a stale or wrong file</h3>
+  <p>Whatever's in Arive at export time is what the lender portal builds disclosures from. Changed the loan amount, fixed the property address, updated income? Re-verify Arive is current before exporting.</p>
+
+  <h3>Forgetting the milestone flip</h3>
+  <p>Signed disclosures with a stale milestone means the file is invisible in the right places and the handoff gate looks unmet. Signed = milestone flipped.</p>
+
+  <h3>Sitting on unsigned disclosures</h3>
+  <p>48 hours, then chase. Every day unsigned is a day Hunter and Danielle can't start, on a contract timeline that doesn't pause.</p>
+</div>
+
+<div className="step-page-section">
+  <h2>What happens next</h2>
+  <p>Disclosures signed, milestone flipped — now <a href="/phases/handoff/submit-handoff-form">submit the processing handoff</a>. Hunter and Danielle take the file from here.</p>
+</div>
+
+<div className="step-page-section">
+  <h2>Who to ask if you're stuck</h2>
+  <p>Lender portal issues (import failures, disclosure errors): the lender's account executive, or Bryce.<br />Fee questions on an unusual file: Bryce or Dean.<br />TRID timing questions: Bryce — don't guess on compliance.</p>
+</div>
+
+<div className="step-meta">
+  <span>Last reviewed: May 2026</span>
+  <span className="dot">·</span>
+  <span>Maintained by: Bryce</span>
+</div>

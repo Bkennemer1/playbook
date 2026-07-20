@@ -67,7 +67,7 @@ export const PHASES: Phase[] = [
     subtitle: 'LO preps & sends · e-signed within the TRID window · Arive: Disclosure Sent',
     primaryRole: 'lo',
     steps: [
-      { slug: 'send-disclosures',        title: 'Prep & send initial disclosures', role: 'lo', summary: 'LO owns disclosures — sent and e-signed before the processing handoff.', status: 'skeleton' },
+      { slug: 'send-disclosures',        title: 'Prep & send initial disclosures', role: 'lo', summary: 'LO owns disclosures — sent and e-signed before the processing handoff.', status: 'draft' },
     ],
   },
   {

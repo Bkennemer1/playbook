@@ -1,58 +1,70 @@
 <div className="step-page-section">
   <h2>Overview</h2>
-  <p>The processing handoff form is the formal trigger that moves a loan from LO ownership into the processing pipeline. When you submit this form, the pipeline app generates Phase 1 tasks for Hunter and Danielle automatically — no email is required.</p>
-  <p>Until this form is submitted, the loan is still considered LO-owned even if disclosures are out. <strong>The form is the handoff.</strong></p>
+  <p>The handoff is the formal moment a loan moves from LO ownership into the processing pipeline. Disclosures are out (see <a href="/phases/disclosures/send-disclosures">the previous phase</a>) — now the LO hands the file to Hunter and Danielle, who begin working it in parallel: Hunter on everything borrower-facing, Danielle on everything back-office.</p>
+  <p>A good handoff transfers <em>everything the team needs to run without calling you</em>: lender, close date, appraisal status, HOI situation, lock status, what docs are in and what's outstanding, and any file-specific notes. A bad handoff is a one-line "new file for you" that generates four clarifying questions before anyone can start.</p>
 </div>
 
 <div className="step-page-section">
-  <h2>Before you start</h2>
+  <h2>How it works today</h2>
+  <p>Today the handoff is a <strong>message the LO sends directly to Hunter and Danielle — via Outlook or Teams.</strong></p>
+  <p>The standard for what that message must contain, regardless of how you compose it:</p>
   <ul>
-    <li>Application is in Arive and a loan number has been generated</li>
-    <li>Pre-approval has been issued</li>
-    <li>You have lender, close date, and appraisal status decided</li>
-    <li>You know whether the borrower has an HOI provider already</li>
-    <li>Rate lock decision has been made (locked / floating / pending)</li>
+    <li>Borrower name(s) and Arive loan number</li>
+    <li>Transaction type and lender</li>
+    <li>Estimated close date</li>
+    <li>Property address and vesting</li>
+    <li>Appraisal status — not needed / not yet ordered / already ordered, plus due dates and payment-link status if ordered</li>
+    <li>HOI status — has a provider (with agent info) or needs a quote</li>
+    <li>Rate lock status — locked (rate, expiration) / floating / pending</li>
+    <li>Documents received vs. still outstanding — this becomes Hunter's chase list</li>
+    <li>VOEs needed or not</li>
+    <li>Anything special — credit repair flags, new construction, borrower circumstances</li>
   </ul>
-</div>
 
-<div className="step-page-section">
-  <h2>How to submit the form</h2>
-  <ol>
-    <li>Go to <a href="https://pipeline.guaranteemc.com" target="_blank" rel="noopener"><strong>pipeline.guaranteemc.com</strong></a> and sign in</li>
-    <li>Click <strong>Pass to Processing</strong> in the top nav</li>
-    <li>Fill in the transaction details — borrower name, loan number, transaction type, lender, close date, property address, vesting</li>
-    <li>Set the appraisal status (Not needed / Not yet ordered / Already ordered)</li>
-    <li>Set the HOI status — does the borrower have a provider, or do we need a quote?</li>
-    <li>Mark the rate lock status</li>
-    <li>Check off any documents already received</li>
-    <li>Add notes for the team if there's anything special they need to know</li>
-    <li>Click <strong>Generate handoff email</strong></li>
-  </ol>
+  <h3>Use the Pass to Processing form</h3>
+  <p>A <strong>Pass to Processing web form</strong> exists that collects all of the above and generates a formatted, role-split email — Danielle's tasks and Hunter's tasks in separate sections — ready to copy into Outlook. <strong>This is the standard.</strong> Adoption is inconsistent today, and that inconsistency is exactly why files start with missing information. If you're handing off a file, use the form: it's faster than composing from scratch and it can't forget a field.</p>
+
+  <h3>Confirm receipt</h3>
+  <p>Hunter and Danielle are expected to confirm receipt of every handoff — a simple reply. This is inconsistent today; make it consistent. An unconfirmed handoff is a file that might be sitting unowned, and nobody knows.</p>
 </div>
 
 <div className="callout info">
-  <strong>What happens next:</strong> The form generates a structured email summary you can review, but more importantly it triggers <code>create_handoff_tasks()</code> in the pipeline backend. Hunter and Danielle will see new files in their queues within a few seconds.
+  <strong>Once Pipeline Manager ships:</strong> the handoff moves in-app. The LO opens their pipeline view, hits <strong>Pass to Processing</strong> on the loan row, fills the same fields in a modal (with a required processor selection), previews the punch list, and confirms. Tasks generate automatically for Hunter and Danielle, their queues populate within seconds, and the queue itself becomes the notification — no email, no Teams message, no receipt-confirmation problem. The email/Teams channel stays available as a fallback during the transition, but the queue becomes the system of record for "what do I work next."
+</div>
+
+<div className="step-page-section">
+  <h2>When to hand off</h2>
+  <p>The trigger: <strong>initial disclosures are sent</strong> and the file is real — under contract (purchase) or committed (refi). Handing off before disclosures means the team starts working a file the LO still owns; handing off long after means Hunter's 48-hour Pre-W clock starts late on a file whose contract clock is already running.</p>
 </div>
 
 <div className="step-page-section">
   <h2>Common issues</h2>
-  <h3>The form won't submit — required fields error</h3>
-  <p>Borrower name and transaction type are required. Everything else is technically optional, but skipping fields means Hunter and Danielle will have to ask you for that info anyway. Fill in everything you know.</p>
 
-  <h3>I submitted the form but no tasks appeared in the queue</h3>
-  <p>Refresh the queue page first. If still missing after 30 seconds, check that the loan number you entered matches the Arive file exactly. If it doesn't, the loan won't link properly. Contact Bryce.</p>
+  <h3>The freeform handoff</h3>
+  <p>"Sending you the Johnson file" with nothing else. Every missing field above becomes a question, a delay, or — worse — an assumption. Use the form.</p>
 
-  <h3>I need to update something I submitted</h3>
-  <p>Don't re-submit the form — that creates duplicate tasks. Just message Hunter or Danielle directly with the correction, or update the loan in Arive and let them know.</p>
+  <h3>No receipt confirmation</h3>
+  <p>The LO thinks the file is being worked; Hunter never saw the Teams message. Days pass. Confirm receipt, every file — and LOs, if you haven't gotten a confirmation within a business day, chase it.</p>
+
+  <h3>Handing off with stale Arive data</h3>
+  <p>The handoff message says locked, Arive says floating. The team works from Arive — make sure Arive reflects reality before you hand off.</p>
+
+  <h3>Updates after the handoff</h3>
+  <p>Something changed — new close date, appraisal ordered, lock executed? Update Arive and message Hunter and Danielle directly. Don't re-send a full handoff.</p>
+</div>
+
+<div className="step-page-section">
+  <h2>What happens next</h2>
+  <p>Hunter starts his <a href="/phases/handoff/pre-underwriting-review">Pre-Underwriting Review</a> — first review within 48 hours. Danielle begins file setup in parallel. From here the file has three owners working their lanes: Hunter borrower-facing, Danielle back-office, LO available for decisions routed to them.</p>
 </div>
 
 <div className="step-page-section">
   <h2>Who to ask if you're stuck</h2>
-  <p>Form not loading or submitting: Bryce or Dean.<br />Question about what to put in a field: ask Hunter (he sees these forms every day).</p>
+  <p>Form not loading or acting up: Bryce.<br />What to include for an unusual file: ask Hunter or Danielle what they'd want to know.</p>
 </div>
 
 <div className="step-meta">
-  <span>Last reviewed: April 2026</span>
+  <span>Last reviewed: May 2026</span>
   <span className="dot">·</span>
   <span>Maintained by: Bryce</span>
 </div>

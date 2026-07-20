@@ -91,7 +91,7 @@ export const PHASES: Phase[] = [
     primaryRole: 'dan',
     steps: [
       { slug: 'file-setup',              title: 'File setup', role: 'dan', summary: 'Title, HOI, appraisal, lock confirmation, CD info.', status: 'draft' },
-      { slug: 'uw-prep-and-submission',  title: 'UW prep & submission', role: 'dan', summary: 'Compliance scrub; submit to underwriting.', status: 'skeleton' },
+      { slug: 'uw-prep-and-submission',  title: 'UW prep & submission', role: 'dan', summary: 'Compliance scrub; submit to underwriting.', status: 'draft' },
     ],
   },
   {

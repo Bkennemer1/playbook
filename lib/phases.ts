@@ -90,7 +90,7 @@ export const PHASES: Phase[] = [
     subtitle: 'Processor-owned · Arive: UW Submitted',
     primaryRole: 'dan',
     steps: [
-      { slug: 'file-setup',              title: 'File setup', role: 'dan', summary: 'Title, HOI, appraisal, lock confirmation, CD info.', status: 'skeleton' },
+      { slug: 'file-setup',              title: 'File setup', role: 'dan', summary: 'Title, HOI, appraisal, lock confirmation, CD info.', status: 'draft' },
       { slug: 'uw-prep-and-submission',  title: 'UW prep & submission', role: 'dan', summary: 'Compliance scrub; submit to underwriting.', status: 'skeleton' },
     ],
   },

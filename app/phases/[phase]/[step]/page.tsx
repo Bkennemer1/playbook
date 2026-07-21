@@ -2,8 +2,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { PHASES, findStep, adjacentSteps, ROLE_META } from '@/lib/phases';
-import fs from 'fs';
-import path from 'path';
 
 export function generateStaticParams() {
   const params: { phase: string; step: string }[] = [];
@@ -21,16 +19,11 @@ export default async function StepPage({ params }: { params: Promise<{ phase: st
   const { prev, next } = adjacentSteps(phaseSlug, stepSlug);
 
   // Try to load the MDX file. If it doesn't exist, show the placeholder.
-  const mdxPath = path.join(process.cwd(), 'content', 'phases', phaseSlug, `${stepSlug}.mdx`);
-  const exists = fs.existsSync(mdxPath);
-
   let MDXContent: any = null;
-  if (exists) {
-    try {
-      MDXContent = (await import(`@/content/phases/${phaseSlug}/${stepSlug}.mdx`)).default;
-    } catch (e) {
-      MDXContent = null;
-    }
+  try {
+    MDXContent = (await import(`@/content/phases/${phaseSlug}/${stepSlug}.mdx`)).default;
+  } catch (e) {
+    MDXContent = null;
   }
 
   return (

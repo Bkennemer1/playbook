@@ -1,0 +1,73 @@
+<div className="step-page-section">
+  <h2>What this page is</h2>
+  <p>Arive fires automated emails to borrowers when a loan's milestone changes. These are <strong>automatic</strong> — moving a file's status in Arive sends the email. Nobody hits send.</p>
+  <p>This page catalogs every milestone-triggered borrower email: what fires it, who receives it, and the exact content the borrower sees. Read the email for a milestone before you move a file into it — the borrower is about to receive it, so the file should be right first.</p>
+</div>
+
+<div className="callout warn">
+  <strong>Milestone changes are borrower-facing events.</strong> Flipping a status in Arive isn't internal bookkeeping — it sends mail. Don't advance a milestone to tidy up your pipeline view, and don't advance one before the thing it announces is actually true.
+</div>
+
+<div className="step-page-section">
+  <h2>Recipients</h2>
+  <p>Milestone emails go to the <strong>borrower, co-borrower, and the realtor</strong> automatically when they're on the file. You don't pick recipients — Arive pulls them from the loan.</p>
+  <p>Practical implication: if the realtor's contact info is wrong or missing on the file, they silently don't get these updates. If a realtor tells you they're out of the loop, check the file's contacts before assuming the automation is broken.</p>
+</div>
+
+<hr style={{border: 'none', borderTop: '1px solid var(--border)', margin: '32px 0'}} />
+
+<div className="step-page-section">
+  <h2>LOAN SETUP</h2>
+  <p><strong>Fires when:</strong> the LO manually moves the file to <strong>Loan Setup</strong> in Arive — typically right after the borrower goes under contract.</p>
+  <p><strong>Subject line:</strong> Your Loan Is Being Set Up – Next Steps Inside</p>
+  <p><strong>Goes to:</strong> borrower, co-borrower, realtor</p>
+
+  <h3>What the borrower sees</h3>
+  <div className="email-template">{`NEXT STEP: REVIEW & SIGN YOUR DISCLOSURES
+Estimated Closing: [close date]
+
+[Borrower names],
+
+We're officially setting up your loan file and moving into the next phase of the process. If this is your first home purchase, don't worry — we'll guide you through each step.
+
+WHAT'S HAPPENING NOW
+We're preparing your file for underwriting review. Within the next 24–48 hours, you'll receive an email from EaseDocs with your initial loan disclosures to review and eSign.
+
+These disclosures are a required first step and allow us to move forward with underwriting, ordering the appraisal, and coordinating title and insurance.
+
+IMPORTANT NOTES
+- The numbers you'll see are estimates, not final figures. It's normal for them to change as we complete the appraisal, title work, and final underwriting.
+- Even though these are preliminary, we do need you to review and eSign them so we can submit your loan to underwriting and keep everything moving forward.
+- Staying on track with each step helps protect your closing date, and this is step one.
+
+We're working to meet your [close date] closing. The sooner these are signed, the more breathing room we have if anything needs adjustment later — which helps avoid last-minute stress as we get closer to closing.
+
+If you have questions about anything in the disclosures, reach out before you sign — that's what we're here for. Otherwise, we'll keep things moving on our end and let you know as soon as the next step is complete.
+
+Bryce Kennemer • Guarantee Mortgage • NMLS #1808043
+guaranteemc.com`}</div>
+
+  <h3>What this commits you to</h3>
+  <p>This email makes two promises on your behalf the moment it sends:</p>
+  <ul>
+    <li><strong>Disclosures within 24–48 hours.</strong> The borrower now expects an e-sign request in two days. Don't move a file to Loan Setup unless you're ready to get disclosures out on that timeline.</li>
+    <li><strong>An email from a specific e-sign system.</strong> See the defect note below.</li>
+  </ul>
+</div>
+
+<div className="callout warn">
+  <strong>Known defect in this template: "EaseDocs" is hardcoded.</strong> EaseDocs is UWM's e-signing system. Every lender uses a different one. So a borrower whose loan is with any other lender is told to watch for an email from EaseDocs — which will never arrive, while the real disclosure email sits unopened from a company name they were never told about. Until the template is fixed to be lender-aware, <strong>tell the borrower directly which e-sign system to expect for their specific lender</strong> when you move the file to Loan Setup.
+</div>
+
+<hr style={{border: 'none', borderTop: '1px solid var(--border)', margin: '32px 0'}} />
+
+<div className="step-page-section">
+  <h2>Other milestones</h2>
+  <p><em>Additional milestone-triggered emails will be documented here as they're catalogued — Disclosure Sent, Underwriting Submitted, Approved with Conditions, Clear to Close, and Loan Funded.</em></p>
+</div>
+
+<div className="step-meta">
+  <span>Last reviewed: July 2026</span>
+  <span className="dot">·</span>
+  <span>Maintained by: Bryce</span>
+</div>

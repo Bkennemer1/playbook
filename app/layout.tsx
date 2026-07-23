@@ -18,6 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
           <nav className="site-nav">
             <Link href="/">All phases</Link>
+            <Link href="/reference/borrower-emails">Borrower emails</Link>
             <a href="https://pipeline.guaranteemc.com" target="_blank" rel="noopener">Pipeline</a>
             <a href="mailto:bryce@guaranteemc.com?subject=Playbook%20feedback">Report issue</a>
           </nav>

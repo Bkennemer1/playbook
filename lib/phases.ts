@@ -102,9 +102,9 @@ export const PHASES: Phase[] = [
     subtitle: 'System trigger · pipeline app splits conditions',
     primaryRole: 'system',
     steps: [
-      { slug: 'awc-trigger',             title: 'UW returns approval letter with conditions', role: 'system', summary: 'Arive flips to AWC; triage task fires for Danielle.', status: 'skeleton' },
-      { slug: 'borrower-conditions',     title: 'Borrower-facing conditions', role: 'hunter', summary: 'Hunter collects outstanding docs from borrower.', status: 'skeleton' },
-      { slug: 'docs-and-arive-conditions', title: 'Docs, uploads & Arive conditions', role: 'dan', summary: 'Danielle clears title/appraisal/HOI conditions and re-submits to UW.', status: 'skeleton' },
+      { slug: 'awc-trigger',             title: 'UW returns approval letter with conditions', role: 'system', summary: 'Arive flips to AWC; triage task fires for Danielle.', status: 'draft' },
+      { slug: 'borrower-conditions',     title: 'Borrower-facing conditions', role: 'hunter', summary: 'Hunter collects outstanding docs from borrower.', status: 'draft' },
+      { slug: 'docs-and-arive-conditions', title: 'Docs, uploads & Arive conditions', role: 'dan', summary: 'Danielle clears title/appraisal/HOI conditions and re-submits to UW.', status: 'draft' },
     ],
   },
   {

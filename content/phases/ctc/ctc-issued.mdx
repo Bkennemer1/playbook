@@ -1,0 +1,51 @@
+<div className="step-page-section">
+  <h2>Overview</h2>
+  <p>Underwriting has accepted the resubmission and cleared every condition. The loan is <strong>Clear to Close</strong> — approved, done with underwriting, ready for closing documents. This is the shortest phase in the playbook and the one with the least work in it, but it contains the handoff that carries the most risk: the file moves from Danielle to Emily.</p>
+</div>
+
+<div className="step-page-section">
+  <h2>What has to happen</h2>
+  <p>Three things, in order:</p>
+  <ol>
+    <li><strong>The Arive milestone flips to Clear to Close.</strong></li>
+    <li><strong>Arive notifies Emily</strong> that the milestone changed — this is how she learns the file is hers.</li>
+    <li><strong>The borrower receives an automated milestone email</strong> — same mechanism as Loan Setup. See <a href="/reference/borrower-emails">Borrower Email Automations</a>.</li>
+  </ol>
+  <p>Steps 2 and 3 are automatic. Step 1 usually isn't — and that's the problem.</p>
+</div>
+
+<div className="callout warn">
+  <strong>The whole phase hangs on one manual step, and it has no backstop.</strong> Emily's notification fires off the milestone change. There is no handoff conversation — she picks the file up from Arive and the lender portal on her own. So if nobody flips the milestone, Emily is never notified, nobody tells her, and the file sits at Clear to Close with a closing date approaching and no one working it.
+  <br /><br />
+  Today the flip is inconsistent: whoever notices the CTC first does it manually. Sometimes that's Danielle, sometimes the LO, sometimes it doesn't happen promptly at all. <strong>If you see a file has been cleared to close, flip the milestone — don't assume someone else has.</strong>
+</div>
+
+<div className="step-page-section">
+  <h2>The UWM automation most LOs haven't turned on</h2>
+  <p>UWM has an API connection with Arive that <strong>updates the milestone automatically</strong> when the loan hits Clear to Close — no manual flip needed. The connection has to be established per LO, and most LOs either haven't set it up or don't use it.</p>
+  <p>If you're originating with UWM, establishing this connection removes the manual step and the failure mode that comes with it. Ask Bryce to walk you through it.</p>
+</div>
+
+<div className="step-page-section">
+  <h2>What Emily inherits</h2>
+  <p>There is no formal handoff — no summary, no context call, no punch list. Emily opens the file in Arive and the lender portal and works out where things stand herself.</p>
+  <p>That means whatever Danielle and Hunter knew about this file — a difficult title company, a borrower who's slow to respond, a closing date that already moved once, a seller-side complication — <strong>doesn't travel with the file unless someone says something.</strong></p>
+  <p>Practical guidance for Danielle: if a file has anything unusual about it, tell Emily when it clears. It costs one message and saves her discovering it at the worst moment. Practical guidance for Emily: on any file that looks non-standard, ask before assuming.</p>
+</div>
+
+<div className="step-page-section">
+  <h2>What happens next</h2>
+  <p>Emily owns the file from here through funding — CD, title coordination, balancing, signing, and the funding wire. See <a href="/phases/closing/review-ctc">Closing</a>.</p>
+  <p>Hunter and Danielle are done with the file at CTC. Hunter's borrower relationship winds down here; Emily takes over borrower communication for closing.</p>
+</div>
+
+<div className="step-page-section">
+  <h2>Who to ask if you're stuck</h2>
+  <p>Setting up the UWM/Arive API connection: Bryce.<br />A file that cleared but the milestone won't update: Bryce.<br />Context on a file that just landed: whoever processed it — Danielle or the LO.</p>
+</div>
+
+<div className="step-meta">
+  <span>Last reviewed: July 2026</span>
+  <span className="dot">·</span>
+  <span>Maintained by: Bryce</span>
+</div>

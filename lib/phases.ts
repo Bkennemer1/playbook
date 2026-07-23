@@ -115,7 +115,7 @@ export const PHASES: Phase[] = [
     subtitle: 'System trigger · Emily\u2019s closing queue populates',
     primaryRole: 'system',
     steps: [
-      { slug: 'ctc-issued',              title: 'UW issues clear to close', role: 'system', summary: 'Arive flips to CTC; queue assigns to Emily.', status: 'skeleton' },
+      { slug: 'ctc-issued',              title: 'UW issues clear to close', role: 'system', summary: 'Arive flips to CTC; queue assigns to Emily.', status: 'draft' },
     ],
   },
   {

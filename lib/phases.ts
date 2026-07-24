@@ -78,7 +78,7 @@ export const PHASES: Phase[] = [
     subtitle: 'LO hands off · Hunter runs Pre-W · Danielle starts file setup',
     primaryRole: 'lo',
     steps: [
-      { slug: 'submit-handoff-form',     title: 'Submit processing handoff form', role: 'lo', summary: 'Pipeline Manager form triggers create_handoff_tasks().', status: 'draft' },
+      { slug: 'submit-handoff-form',     title: 'Submit processing handoff form', role: 'lo', summary: 'Outlook or Teams message to Hunter and Danielle — use the Pass to Processing form.', status: 'draft' },
       { slug: 'pre-underwriting-review', title: 'Pre-Underwriting Review (Pre-W)', role: 'hunter', summary: 'Hunter reviews the file for missing docs, inconsistencies, and borrower needs — first review within 48 hours.', status: 'draft' },
     ],
   },
@@ -90,7 +90,7 @@ export const PHASES: Phase[] = [
     subtitle: 'Processor-owned · Arive: UW Submitted',
     primaryRole: 'dan',
     steps: [
-      { slug: 'file-setup',              title: 'File setup', role: 'dan', summary: 'Title, HOI, appraisal, lock confirmation, CD info.', status: 'draft' },
+      { slug: 'file-setup',              title: 'File setup', role: 'dan', summary: 'Title, appraisal, contract review, CD party info, VOEs.', status: 'draft' },
       { slug: 'uw-prep-and-submission',  title: 'UW prep & submission', role: 'dan', summary: 'Compliance scrub; submit to underwriting.', status: 'draft' },
     ],
   },
@@ -99,10 +99,10 @@ export const PHASES: Phase[] = [
     number: 'PHASE 6',
     letter: 'F',
     title: 'UW Decision · Approved with Conditions',
-    subtitle: 'System trigger · pipeline app splits conditions',
-    primaryRole: 'system',
+    subtitle: 'Danielle triages and splits conditions · Hunter and Danielle work in parallel',
+    primaryRole: 'dan',
     steps: [
-      { slug: 'awc-trigger',             title: 'UW returns approval letter with conditions', role: 'system', summary: 'Arive flips to AWC; triage task fires for Danielle.', status: 'draft' },
+      { slug: 'awc-trigger',             title: 'AWC returned — triage & split conditions', role: 'dan', summary: 'Danielle reads the approval letter, then enters and assigns every condition in Arive.', status: 'draft' },
       { slug: 'borrower-conditions',     title: 'Borrower-facing conditions', role: 'hunter', summary: 'Hunter collects outstanding docs from borrower.', status: 'draft' },
       { slug: 'docs-and-arive-conditions', title: 'Docs, uploads & Arive conditions', role: 'dan', summary: 'Danielle clears title/appraisal/HOI conditions and re-submits to UW.', status: 'draft' },
     ],
@@ -112,10 +112,10 @@ export const PHASES: Phase[] = [
     number: 'PHASE 7',
     letter: 'G',
     title: 'Clear to Close',
-    subtitle: 'System trigger · Emily\u2019s closing queue populates',
+    subtitle: 'Milestone flips to CTC · Arive notifies Emily',
     primaryRole: 'system',
     steps: [
-      { slug: 'ctc-issued',              title: 'UW issues clear to close', role: 'system', summary: 'Arive flips to CTC; queue assigns to Emily.', status: 'draft' },
+      { slug: 'ctc-issued',              title: 'UW issues clear to close', role: 'system', summary: 'Milestone flips to CTC and Arive notifies Emily. Manual today, with no backstop.', status: 'draft' },
     ],
   },
   {
@@ -137,10 +137,10 @@ export const PHASES: Phase[] = [
     number: 'PHASE 9',
     letter: 'I',
     title: 'Post-Close',
-    subtitle: 'LO-owned · loan exits active pipeline',
+    subtitle: 'Automated review request at Docs Signed · LO follow-up is inconsistent',
     primaryRole: 'lo',
     steps: [
-      { slug: 'thank-you-and-review',    title: 'Thank-you note & review request', role: 'lo', summary: 'Personalized thank-you; request Google/Zillow review.', status: 'skeleton' },
+      { slug: 'post-close-followup',     title: 'Review request & post-close follow-up', role: 'lo', summary: 'Automated Google review email fires at Docs Signed; everything after is up to the LO.', status: 'draft' },
     ],
   },
 ];

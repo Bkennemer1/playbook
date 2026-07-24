@@ -1,0 +1,199 @@
+<div className="step-page-section"> 
+
+  <h2>Overview</h2> 
+
+  <p>Balancing is reconciling our Closing Disclosure against the title company's until the two match to the penny. It's the most iterative work in closing — expect several rounds — and it ends with the final CD going to the borrower.</p> 
+
+</div> 
+
+  
+
+<div className="callout info"> 
+
+  <strong>This workflow is UWM-specific.</strong> Emily closes our UWM files using UWM's <strong>UClose</strong> portal. On non-UWM lenders — Kind Lending, PennyMac, Loan Store — <strong>the lender has its own closer</strong> who handles balancing and funding. Those files aren't Emily's. If you're looking at a non-UWM file, the lender's closer owns this stage. 
+
+</div> 
+
+  
+
+<div className="step-page-section"> 
+
+  <h2>Kicking off balancing</h2> 
+
+  <p>Emily downloads the current CD on file — the same one the borrower received to start the three-day clock — and emails it to the title company representative to begin balancing.</p> 
+
+  <p><strong>What goes in that email:</strong></p> 
+
+  <ul> 
+
+    <li>The current Closing Disclosure</li> 
+
+    <li>The processing invoice</li> 
+
+    <li>The homeowners insurance policy</li> 
+
+    <li>Broker wire instructions</li> 
+
+    <li>Any relevant notes on the file as a whole</li> 
+
+  </ul> 
+
+  <div className="email-template">{`Hi [Title Rep], 
+
+  
+
+Please see attached our initial closing disclosure to begin balancing on this file. 
+
+  
+
+[Attachments: CD, processing invoice, HOI policy, broker wire instructions] 
+
+[Any file-specific notes] 
+
+  
+
+Thanks, 
+
+Emily`}</div> 
+
+  <p>Then move on to another file. Balancing is asynchronous — there's nothing to do until title responds with their version.</p> 
+
+</div> 
+
+  
+
+<div className="step-page-section"> 
+
+  <h2>The balancing loop</h2> 
+
+  <p>Title emails back with <strong>their</strong> closing disclosure. From there it's a cycle:</p> 
+
+  <ol> 
+
+    <li><strong>Open title's PDF and compare</strong> against what you sent — line by line.</li> 
+
+    <li><strong>Make the changes in UClose</strong> to move our numbers toward title's. Re-save the fees.</li> 
+
+    <li><strong>Regenerate the CD</strong>, download it, and review.</li> 
+
+    <li><strong>It probably still won't balance.</strong> Send the updated CD back to title: <em>"We don't balance — here's my updated CD. Take a look and let me know if you can pinpoint where we're off."</em></li> 
+
+    <li><strong>Repeat.</strong></li> 
+
+  </ol> 
+
+</div> 
+
+  
+
+<div className="callout"> 
+
+  <strong>Three or four rounds is normal — this is not a sign something is wrong.</strong> New closers often assume a file that won't balance on the second pass has a real problem. It usually doesn't. Fees get categorized differently, credits land in different places, and it takes a few passes to converge. Keep the loop tight and the tone collaborative; title is trying to get to the same place you are. 
+
+</div> 
+
+  
+
+<div className="step-page-section"> 
+
+  <h2>Balanced — then LO approval, before the borrower</h2> 
+
+  <p>Once Emily and the title rep both confirm the file balances, Emily generates the <strong>full final closing package</strong>.</p> 
+
+  <p><strong>Before it goes to the borrower, confirm it with the LO.</strong> The LO knows things about the file that may not be documented — a credit they promised up front, a fee arrangement discussed on the phone, something the borrower is expecting. Emily can't see those. A two-minute check with the LO catches the discrepancy before the borrower sees a number that doesn't match what they were told.</p> 
+
+  <p>If the LO flags changes:</p> 
+
+  <ol> 
+
+    <li>Emily makes the changes in UClose</li> 
+
+    <li>Re-downloads the CD PDF</li> 
+
+    <li><strong>Resends to title to confirm the file is still in balance</strong> — any change can break balance</li> 
+
+    <li>Title confirms balance</li> 
+
+    <li>Then the final CD goes to the borrower</li> 
+
+  </ol> 
+
+</div> 
+
+  
+
+<div className="step-page-section"> 
+
+  <h2>Sending the final CD</h2> 
+
+  <p>To the borrower, CC the realtor:</p> 
+
+  <div className="email-template">{`[Borrower Name], 
+
+  
+
+Congratulations! Your final closing disclosure is now balanced. Please see the attached document for your records. 
+
+  
+
+Please make your cashier's check or wire transfer for [cash to close from Closing Disclosure] payable to: 
+
+  
+
+[Settlement agent name — page 5 of the Closing Disclosure] 
+
+  
+
+Your closing is scheduled for [closing date — page 1 of the Closing Disclosure] 
+
+  
+
+You'll need to bring a valid, unexpired ID and be present to sign. 
+
+  
+
+Let me know if you have any questions ahead of closing — happy to help. 
+
+  
+
+Appreciate the opportunity to work with you on this!`}</div> 
+
+</div> 
+
+  
+
+<div className="callout warn"> 
+
+  <strong>Wire fraud: tell the borrower to verify by phone.</strong> Title sends wire instructions directly to the borrower — we don't. That's exactly the gap criminals exploit: a spoofed email with altered wire instructions, arriving at the moment the borrower expects one, for the amount they're expecting. Tell every borrower plainly: <strong>call the title company at a number you already have — not one from the email — and verbally confirm the wire instructions before sending a dollar.</strong> Wired funds sent to a fraudulent account are effectively unrecoverable. 
+
+</div> 
+
+  
+
+<div className="callout warn"> 
+
+  <strong>Update the Arive milestone to DOCS OUT — every time, without exception.</strong> This is required, not optional, and it is currently the most frequently missed step in closing. Reporting, pipeline visibility, and downstream automation all key off it. A file that closed but never had its milestone advanced is invisible to every system that depends on Arive. 
+
+</div> 
+
+  
+
+<div className="step-page-section"> 
+
+  <h2>Who to ask if you're stuck</h2> 
+
+  <p>A file that won't balance after several rounds: Bryce.<br />A fee or credit you can't account for: the LO on the file.<br />UClose portal problems: the UWM account executive.<br />Whether a late change requires re-disclosure: Bryce.</p> 
+
+</div> 
+
+  
+
+<div className="step-meta"> 
+
+  <span>Last reviewed: July 2026</span> 
+
+  <span className="dot">·</span> 
+
+  <span>Maintained by: Bryce</span> 
+
+</div> 

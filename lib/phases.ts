@@ -128,8 +128,8 @@ export const PHASES: Phase[] = [
     steps: [
       { slug: 'review-ctc', title: 'Pick up the file & clear the CD gate', role: 'emily', summary: 'Get oriented, then work the checklist every lender requires before a CD can issue.', status: 'draft' },
       { slug: 'cd-issued', title: 'CD issued & the 3-day clock', role: 'emily', summary: 'Auto-generated at UWM, requested elsewhere — then TRID timing governs.', status: 'draft' },
-      { slug: 'balance-and-final-cd', title: 'Balance with title & send the final CD', role: 'emily', summary: 'Iterative reconciliation in UClose, LO approval, then the final CD to the borrower.', status: 'skeleton' },
-      { slug: 'signing-through-funded', title: 'Signing through funded', role: 'emily', summary: 'Realtor schedules signing; Emily tracks docs signed and the funding wire.', status: 'skeleton' },
+      { slug: 'balance-and-final-cd', title: 'Balance with title & send the final CD', role: 'emily', summary: 'Iterative reconciliation in UClose, LO approval, then the final CD to the borrower.', status: 'draft' },
+      { slug: 'signing-through-funded', title: 'Signing through funded', role: 'emily', summary: 'Realtor schedules signing; Emily tracks docs signed and the funding wire.', status: 'draft' },
     ],
   },
   {

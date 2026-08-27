@@ -1,32 +1,46 @@
 <div className="step-page-section">
   <h2>What this page is</h2>
-  <p>Arive fires automated emails to borrowers when a loan's milestone changes. These are <strong>automatic</strong> — moving a file's status in Arive sends the email. Nobody hits send.</p>
-  <p>This page catalogs every milestone-triggered borrower email: what fires it, who receives it, and the exact content the borrower sees. Read the email for a milestone before you move a file into it — the borrower is about to receive it, so the file should be right first.</p>
+  <p>Arive fires automated emails to borrowers at loan milestone changes and certain tracker events. These are <strong>automatic</strong> — the status change sends the email. Nobody hits send.</p>
+  <p>This page is the complete catalog: every automated borrower email, what triggers it, who receives it, and its full content. Read the email for a milestone before you move a file into it — the borrower is about to receive it, so the file had better be right first.</p>
 </div>
 
 <div className="callout warn">
-  <strong>Milestone changes are borrower-facing events.</strong> Flipping a status in Arive isn't internal bookkeeping — it sends mail. Don't advance a milestone to tidy up your pipeline view, and don't advance one before the thing it announces is actually true.
+  <strong>Milestone changes are borrower-facing events.</strong> Flipping a status in Arive isn't internal bookkeeping — it sends mail to the borrower, their co-borrower, their agent, and others. Don't advance a milestone to tidy your pipeline view, and never advance one before the thing it announces is actually true.
+</div>
+
+<div className="callout warn">
+  <strong>Two known issues in the current templates — flagged for fixing:</strong>
+  <br /><br />
+  <strong>1. Possible duplicate review request.</strong> The Google review ask is built into the <strong>Loan Funded</strong> email, which is the right place — the loan has actually funded. But a separate "Loan Closed – Congratulations!" review email has also been seen firing at <strong>Docs Signed</strong>, which is premature (the loan hasn't funded yet, and the subject line says "closed" when it hasn't). If both are active in Arive, borrowers get asked for a review twice. The Docs Signed review request should be retired; the review ask belongs only on Loan Funded.
+  <br /><br />
+  <strong>2. "EaseDocs" is hardcoded in two emails.</strong> The Loan Setup and Disclosed emails both name EaseDocs as the e-sign system. EaseDocs is UWM-specific — every other lender uses a different one. A non-UWM borrower is told to watch for an EaseDocs email that never arrives. Until these are made lender-aware, tell non-UWM borrowers which e-sign system to actually expect.
 </div>
 
 <div className="step-page-section">
-  <h2>Recipients</h2>
-  <p>Milestone emails go to the <strong>borrower, co-borrower, and the realtor</strong> automatically when they're on the file. You don't pick recipients — Arive pulls them from the loan.</p>
-  <p>Practical implication: if the realtor's contact info is wrong or missing on the file, they silently don't get these updates. If a realtor tells you they're out of the loop, check the file's contacts before assuming the automation is broken.</p>
+  <h2>Quick reference — recipients by email</h2>
+  <p>Recipients vary per email. This is worth a sanity check against how you actually want each one routed:</p>
+  <ul>
+    <li><strong>Loan Setup</strong> — To: Borrower · Cc: LO, Co-Borrowers, Buyer's Agent</li>
+    <li><strong>Disclosed</strong> — To: Borrower · Cc: LO, Buyer's Agent, Processors, Co-Borrowers</li>
+    <li><strong>Submitted to UW</strong> — To: Borrower · Cc: LO, Co-Borrowers</li>
+    <li><strong>Clear to Close</strong> — To: Borrower · Cc: Agents, Co-Borrowers, LO</li>
+    <li><strong>Docs Signed</strong> — To: Borrower · Cc: LO, Co-Borrowers</li>
+    <li><strong>Loan Funded</strong> — To: Borrower · Cc: LO, Co-Borrowers</li>
+    <li><strong>Appraisal Ordered</strong> — To: Borrower · Cc: Co-Borrowers, Agents · Bcc: LO</li>
+  </ul>
 </div>
 
 <hr style={{border: 'none', borderTop: '1px solid var(--border)', margin: '32px 0'}} />
 
 <div className="step-page-section">
-  <h2>LOAN SETUP</h2>
-  <p><strong>Fires when:</strong> the LO manually moves the file to <strong>Loan Setup</strong> in Arive — typically right after the borrower goes under contract.</p>
-  <p><strong>Subject line:</strong> Your Loan Is Being Set Up – Next Steps Inside</p>
-  <p><strong>Goes to:</strong> borrower, co-borrower, realtor</p>
-
-  <h3>What the borrower sees</h3>
+  <h2>1 · LOAN SETUP</h2>
+  <p><strong>Fires when:</strong> the file is moved to <strong>Loan Setup</strong> (typically once under contract).</p>
+  <p><strong>To:</strong> Primary Borrower &nbsp; <strong>Cc:</strong> Loan Officers, Co-Borrowers, Buyer's Real Estate Agents</p>
+  <p><strong>Subject:</strong> Your Loan Is Being Set Up – Next Steps Inside</p>
   <div className="email-template">{`NEXT STEP: REVIEW & SIGN YOUR DISCLOSURES
-Estimated Closing: [close date]
+Estimated Closing: [Loan Est Closing Date]
 
-[Borrower names],
+[All Borrowers First Names],
 
 We're officially setting up your loan file and moving into the next phase of the process. If this is your first home purchase, don't worry — we'll guide you through each step.
 
@@ -36,38 +50,192 @@ We're preparing your file for underwriting review. Within the next 24–48 hours
 These disclosures are a required first step and allow us to move forward with underwriting, ordering the appraisal, and coordinating title and insurance.
 
 IMPORTANT NOTES
-- The numbers you'll see are estimates, not final figures. It's normal for them to change as we complete the appraisal, title work, and final underwriting.
-- Even though these are preliminary, we do need you to review and eSign them so we can submit your loan to underwriting and keep everything moving forward.
-- Staying on track with each step helps protect your closing date, and this is step one.
+• The numbers you'll see are estimates, not final figures. It's normal for them to change as we complete the appraisal, title work, and final underwriting.
+• Even though these are preliminary, we do need you to review and eSign them so we can submit your loan to underwriting and keep everything moving forward.
+• Staying on track with each step helps protect your closing date, and this is step one.
 
-We're working to meet your [close date] closing. The sooner these are signed, the more breathing room we have if anything needs adjustment later — which helps avoid last-minute stress as we get closer to closing.
+We're working to meet your [Loan Est Closing Date] closing. The sooner these are signed, the more breathing room we have if anything needs adjustment later — which helps avoid last-minute stress as we get closer to closing.
 
 If you have questions about anything in the disclosures, reach out before you sign — that's what we're here for. Otherwise, we'll keep things moving on our end and let you know as soon as the next step is complete.
 
 Bryce Kennemer • Guarantee Mortgage • NMLS #1808043
 guaranteemc.com`}</div>
-
-  <h3>What this commits you to</h3>
-  <p>This email makes two promises on your behalf the moment it sends:</p>
-  <ul>
-    <li><strong>Disclosures within 24–48 hours.</strong> The borrower now expects an e-sign request in two days. Don't move a file to Loan Setup unless you're ready to get disclosures out on that timeline.</li>
-    <li><strong>An email from a specific e-sign system.</strong> See the defect note below.</li>
-  </ul>
-</div>
-
-<div className="callout warn">
-  <strong>Known defect in this template: "EaseDocs" is hardcoded.</strong> EaseDocs is UWM's e-signing system. Every lender uses a different one. So a borrower whose loan is with any other lender is told to watch for an email from EaseDocs — which will never arrive, while the real disclosure email sits unopened from a company name they were never told about. Until the template is fixed to be lender-aware, <strong>tell the borrower directly which e-sign system to expect for their specific lender</strong> when you move the file to Loan Setup.
+  <p style={{fontSize: 13, color: 'var(--text-muted)'}}><em>Note: "EaseDocs" is hardcoded — correct only for UWM files. See the issues callout above.</em></p>
 </div>
 
 <hr style={{border: 'none', borderTop: '1px solid var(--border)', margin: '32px 0'}} />
 
 <div className="step-page-section">
-  <h2>Other milestones</h2>
-  <p><em>Additional milestone-triggered emails will be documented here as they're catalogued — Disclosure Sent, Underwriting Submitted, Approved with Conditions, Clear to Close, and Loan Funded.</em></p>
+  <h2>2 · DISCLOSED</h2>
+  <p><strong>Fires when:</strong> loan status changes to <strong>Disclosed</strong>.</p>
+  <p><strong>To:</strong> Primary Borrower &nbsp; <strong>Cc:</strong> Loan Officers, Buyer's Real Estate Agents, Processors, Co-Borrowers</p>
+  <p><strong>Subject:</strong> Loan Disclosures – [Subject Property Address] – [Borrower Last Name]</p>
+  <div className="email-template">{`[Borrower First Name], [Co-Borrower First Name],
+
+We are excited to be partnering with you to provide mortgage financing for [Subject Property Address].
+
+To get started, I've prepared your initial loan disclosures. You should have received an email from Easedocs with a link to e-sign the documents. Please take a moment to carefully review and sign them at your earliest convenience. This will allow us to expedite the next steps and move forward with securing your mortgage.
+
+Moving forward, I will remain your primary point of contact. If you have any questions or concerns, feel free to reach out to me directly. To help ensure everything proceeds smoothly, you will also receive emails from [Loan Processor First Name] at [Loan Processor Email]. [Loan Processor First Name] will assist with gathering necessary documentation, following up on outstanding items, ordering the appraisal, and ensuring your file is ready for the next steps.
+
+Our goal is to make this process as seamless as possible, and [Loan Processor First Name] and I are here to guide you every step of the way.
+
+Please don't hesitate to contact us if you need anything. We look forward to working with you!
+
+Thank you,
+
+[Email Signature]`}</div>
+  <p style={{fontSize: 13, color: 'var(--text-muted)'}}><em>Note: this email introduces the processor by name to the borrower — consistent with Danielle staying behind the scenes on comms while the borrower still gets a name to expect. Also names Easedocs (UWM-specific).</em></p>
+</div>
+
+<hr style={{border: 'none', borderTop: '1px solid var(--border)', margin: '32px 0'}} />
+
+<div className="step-page-section">
+  <h2>3 · SUBMITTED TO UW</h2>
+  <p><strong>Fires when:</strong> loan status changes to <strong>Submitted to Underwriting</strong>.</p>
+  <p><strong>To:</strong> Primary Borrower &nbsp; <strong>Cc:</strong> Loan Officers, Co-Borrowers</p>
+  <p><strong>Subject:</strong> Your Loan Has Been Submitted to Underwriting</p>
+  <div className="email-template">{`Next Step: Underwriting Review
+We've formally submitted your loan to underwriting for a full review.
+
+[Borrower First Name],
+
+Your loan file has now been formally submitted to underwriting. That means all initial documentation has been packaged and sent for a full review.
+
+WHAT HAPPENS NOW
+The underwriter will review your income, assets, credit, contract, and property details to issue a conditional approval. Most approvals come back within 24–48 hours.
+
+WHAT TO EXPECT IN THE APPROVAL
+Every file — even the cleanest ones — receives conditions. These can include updated documents, clarification letters, or items needed from title or insurance.
+
+Nothing here is unusual. It's simply the process.
+
+YOUR ROLE
+Once the approval is issued, we'll send you a clear list of anything needed from you. The faster those items are provided, the faster we can move to final approval and closing.
+
+OUR ROLE
+We're monitoring your file through underwriting and will reach out the moment approval is issued. In the meantime, no action is needed from you.
+
+If anything comes up or you have questions about this stage, I'm here.
+
+Bryce Kennemer • Guarantee Mortgage • NMLS #1808043`}</div>
+</div>
+
+<hr style={{border: 'none', borderTop: '1px solid var(--border)', margin: '32px 0'}} />
+
+<div className="step-page-section">
+  <h2>4 · CLEAR TO CLOSE</h2>
+  <p><strong>Fires when:</strong> loan status changes to <strong>Clear to Close</strong>.</p>
+  <p><strong>To:</strong> Primary Borrower &nbsp; <strong>Cc:</strong> Real Estate Agents, Co-Borrowers, Loan Officers</p>
+  <p><strong>Subject:</strong> New Status 🎉 for [Subject Property Address]</p>
+  <div className="email-template">{`GREAT NEWS!
+Your Loan Is Clear to Close
+
+Congratulations! Your loan has officially been cleared to close.
+
+This means the lender has completed its final review and approved your loan for closing. You've reached one of the biggest milestones in the mortgage process, and the finish line is now in sight.
+
+Our team will continue coordinating with the title company and the other parties involved to finalize your closing documents and confirm the remaining details.
+
+WHAT HAPPENS NEXT?
+The title company will prepare the final closing documents and confirm your appointment, signing instructions, and exact amount needed for closing. Please continue to watch for updates from our team and the title company.`}</div>
+</div>
+
+<hr style={{border: 'none', borderTop: '1px solid var(--border)', margin: '32px 0'}} />
+
+<div className="step-page-section">
+  <h2>5 · DOCS SIGNED</h2>
+  <p><strong>Fires when:</strong> loan status changes to <strong>Docs Signed</strong>.</p>
+  <p><strong>To:</strong> Primary Borrower &nbsp; <strong>Cc:</strong> Loan Officers, Co-Borrowers</p>
+  <p><strong>Subject:</strong> 🎉 Your Closing Documents Are Signed!</p>
+  <div className="email-template">{`CONGRATULATIONS!
+Your Closing Documents Are Signed
+
+You've officially signed your closing documents — an exciting milestone, and one of the final steps in completing your loan.
+
+From here, the title company will complete its final review and handle the remaining funding and recording process. Once everything is finalized, we'll send you confirmation that your loan has officially funded.
+
+If anything else is needed before then, our team will reach out directly.
+
+WHAT HAPPENS NEXT?
+The title company will review the completed documents, confirm all closing requirements have been met, and coordinate the funding and recording of your transaction.
+
+Thank you for trusting Guarantee Mortgage to guide you through this process. We're honored to be part of such an important milestone.
+
+You're almost there!
+
+[Email Signature]`}</div>
+  <p style={{fontSize: 13, color: 'var(--text-muted)'}}><em>Note: this is the correct Docs Signed email — a "you signed, funding next" note with no review request. If a separate "Loan Closed – Congratulations!" review email is also firing at this milestone, it's a duplicate and should be retired (see issues callout).</em></p>
+</div>
+
+<hr style={{border: 'none', borderTop: '1px solid var(--border)', margin: '32px 0'}} />
+
+<div className="step-page-section">
+  <h2>6 · LOAN FUNDED</h2>
+  <p><strong>Fires when:</strong> loan status changes to <strong>Loan Funded</strong>.</p>
+  <p><strong>To:</strong> Primary Borrower &nbsp; <strong>Cc:</strong> Loan Officers, Co-Borrowers</p>
+  <p><strong>Subject:</strong> 🎉 It's Official — Your Loan Has Funded!</p>
+  <div className="email-template">{`CONGRATULATIONS!
+Your Loan Has Officially Funded
+
+Congratulations! Your loan has officially funded, and your transaction is now complete.
+
+Thank you for trusting Guarantee Mortgage to help you through such an important milestone. We truly appreciate the opportunity to earn your business and hope we exceeded your expectations every step of the way.
+
+LOVED WORKING WITH US?
+One of the biggest compliments you can give our team is a quick Google review. Your feedback helps future homeowners know what to expect and truly means a lot to us.
+
+[Leave a Google Review]
+
+If you ever have questions about your mortgage, refinancing in the future, or if friends or family need a trusted mortgage professional, we're always just a phone call or text away.
+
+Congratulations again, and thank you for choosing Guarantee Mortgage!
+
+[Email Signature]`}</div>
+  <p style={{fontSize: 13, color: 'var(--text-muted)'}}><em>This is the correct home for the Google review request — the loan has actually funded.</em></p>
+</div>
+
+<hr style={{border: 'none', borderTop: '1px solid var(--border)', margin: '32px 0'}} />
+
+<div className="step-page-section">
+  <h2>7 · APPRAISAL ORDERED (tracker update)</h2>
+  <p><strong>Fires when:</strong> the appraisal is ordered — a <strong>tracker event</strong>, not a milestone status change. This is the one email in the set that isn't tied to a loan-status milestone.</p>
+  <p><strong>To:</strong> Primary Borrower &nbsp; <strong>Cc:</strong> Co-Borrowers, Real Estate Agents &nbsp; <strong>Bcc:</strong> Loan Officers</p>
+  <p><strong>Subject:</strong> Loan Order Status on [Subject Property Address]</p>
+  <div className="email-template">{`APPRAISAL ORDERED
+Property: [Subject Property Address]
+
+We've moved forward with ordering the appraisal. This confirms current market value and keeps us on track for underwriting and closing.
+
+LOAN PROGRESS TRACKER
+Disclosures Sent .............. [Loan Disclosed Date]
+Submitted to Underwriting ..... [Loan Submitted to UW Date]
+Approved w/ Conditions ........ [Loan Approved w/ Conditions Date]
+Appraisal Ordered ............. [Loan Appraisal Ordered Date]
+Appraisal Received ............ [Appraisal Received Date]
+Title Ordered ................. [Loan Title Ordered Date]
+Clear to Close ................ [Loan Clear To Close Date]
+Docs Signed ................... [Loan Docs Signed Date]
+Loan Funded ................... [Loan Funded Date]
+
+WHAT TO EXPECT
+• Scheduling: The appraiser will contact the listing/access contact to schedule.
+• Timeline: Typical turn time is 5–10 business days (market dependent). We'll update everyone as soon as the report arrives.
+
+WHAT YOU NEED TO DO
+• Access: Ensure the property is accessible at the scheduled time.
+• Condition: Have utilities on and spaces accessible (attic, garage, outbuildings) if possible.
+• Questions: Reply here anytime — our team is monitoring daily.
+
+[Borrower Portal]
+
+Bryce Kennemer • Guarantee Mortgage • NMLS #1808043
+guaranteemc.com`}</div>
+  <p style={{fontSize: 13, color: 'var(--text-muted)'}}><em>The progress tracker pulls live milestone dates from Arive — which means it's only as accurate as the milestone updates. Files with skipped milestone flips will show blank or stale dates in this tracker.</em></p>
 </div>
 
 <div className="step-meta">
-  <span>Last reviewed: July 2026</span>
+  <span>Last reviewed: August 2026</span>
   <span className="dot">·</span>
   <span>Maintained by: Bryce</span>
 </div>

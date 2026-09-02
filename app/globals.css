@@ -400,3 +400,138 @@ pre {
   .step-nav { grid-template-columns: 1fr; }
   .site-nav { display: none; }
 }
+
+/* ─── Workflow Map (board) ───────────────────── */
+.board-scroll {
+  overflow-x: auto;
+  padding: 8px 0 24px;
+  -webkit-overflow-scrolling: touch;
+}
+.board {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  min-width: min-content;
+}
+.wf-column {
+  flex: 0 0 240px;
+  width: 240px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.wf-col-head {
+  padding: 14px 14px 12px;
+  border-bottom: 1px solid var(--border-light);
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.wf-col-bullet {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--maroon);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.wf-col-bullet.system { background: var(--system); }
+.wf-col-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--text-subtle);
+  letter-spacing: .04em;
+}
+.wf-col-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -.1px;
+  line-height: 1.25;
+  display: block;
+  margin-top: 1px;
+  transition: color .12s;
+}
+.wf-col-name:hover { color: var(--maroon); }
+.wf-col-body {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+.wf-card {
+  background: var(--white);
+  border-radius: 9px;
+  padding: 11px 12px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--system);
+  display: block;
+  transition: background .12s, transform .12s, box-shadow .12s;
+}
+.wf-card:hover {
+  background: var(--bg);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.wf-card-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.wf-role-tag {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 20px;
+  display: inline-block;
+}
+.wf-legend {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  padding: 14px 16px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.wf-legend-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.wf-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12.5px;
+  color: var(--text);
+  font-weight: 500;
+}
+.wf-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+@media (max-width: 720px) {
+  .board-scroll { padding: 8px 0 20px; margin: 0 -16px; padding-left: 16px; padding-right: 16px; }
+  .wf-legend { gap: 12px; }
+}

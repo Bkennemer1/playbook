@@ -2,7 +2,7 @@
 // Single source of truth for the playbook structure.
 // Add or rename phases/steps here; pages are generated from this list.
 
-export type Role = 'lo' | 'hunter' | 'dan' | 'emily' | 'borrower' | 'system';
+export type Role = 'lo' | 'processor' | 'closer' | 'borrower' | 'system';
 
 export interface Step {
   slug: string;
@@ -23,12 +23,11 @@ export interface Phase {
 }
 
 export const ROLE_META: Record<Role, { label: string; color: string; pale: string; }> = {
-  lo:       { label: 'Loan Officer',     color: '#500000', pale: '#F9F0F0' },
-  hunter:   { label: 'Hunter · LOA',     color: '#534AB7', pale: '#EEEDFE' },
-  dan:      { label: 'Danielle · Processor', color: '#0F6E56', pale: '#E1F5EE' },
-  emily:    { label: 'Emily · Closer',   color: '#3B6D11', pale: '#EAF3DE' },
-  borrower: { label: 'Borrower',         color: '#B8860B', pale: '#FAF1DC' },
-  system:   { label: 'System / Arive',   color: '#5F5E5A', pale: '#F1EFE8' },
+  lo:        { label: 'Loan Officer',    color: '#500000', pale: '#F9F0F0' },
+  processor: { label: 'Processor',       color: '#0F6E56', pale: '#E1F5EE' },
+  closer:    { label: 'Closer',          color: '#3B6D11', pale: '#EAF3DE' },
+  borrower:  { label: 'Borrower',        color: '#B8860B', pale: '#FAF1DC' },
+  system:    { label: 'System / Arive',  color: '#5F5E5A', pale: '#F1EFE8' },
 };
 
 export const PHASES: Phase[] = [
@@ -75,11 +74,11 @@ export const PHASES: Phase[] = [
     number: 'PHASE 4',
     letter: 'D',
     title: 'Handoff to Processing',
-    subtitle: 'LO hands off · Hunter runs Pre-W · Danielle starts file setup',
+    subtitle: 'LO hands off · processor runs Pre-W and starts file setup',
     primaryRole: 'lo',
     steps: [
-      { slug: 'submit-handoff-form',     title: 'Submit processing handoff form', role: 'lo', summary: 'Outlook or Teams message to Hunter and Danielle — use the Pass to Processing form.', status: 'draft' },
-      { slug: 'pre-underwriting-review', title: 'Pre-Underwriting Review (Pre-W)', role: 'hunter', summary: 'Hunter reviews the file for missing docs, inconsistencies, and borrower needs — first review within 48 hours.', status: 'draft' },
+      { slug: 'submit-handoff-form',     title: 'Submit processing handoff form', role: 'lo', summary: 'Outlook or Teams message to the processor — use the Pass to Processing form.', status: 'draft' },
+      { slug: 'pre-underwriting-review', title: 'Pre-Underwriting Review (Pre-W)', role: 'processor', summary: 'The processor reviews the file for missing docs, inconsistencies, and borrower needs — first review within 48 hours.', status: 'draft' },
     ],
   },
   {
@@ -88,10 +87,10 @@ export const PHASES: Phase[] = [
     letter: 'E',
     title: 'Initial Processing & UW Submission',
     subtitle: 'Processor-owned · Arive: UW Submitted',
-    primaryRole: 'dan',
+    primaryRole: 'processor',
     steps: [
-      { slug: 'file-setup',              title: 'File setup', role: 'dan', summary: 'Title, appraisal, contract review, CD party info, VOEs.', status: 'draft' },
-      { slug: 'uw-prep-and-submission',  title: 'UW prep & submission', role: 'dan', summary: 'Compliance scrub; submit to underwriting.', status: 'draft' },
+      { slug: 'file-setup',              title: 'File setup', role: 'processor', summary: 'Title, appraisal, contract review, CD party info, VOEs.', status: 'draft' },
+      { slug: 'uw-prep-and-submission',  title: 'UW prep & submission', role: 'processor', summary: 'Compliance scrub; submit to underwriting.', status: 'draft' },
     ],
   },
   {
@@ -99,12 +98,12 @@ export const PHASES: Phase[] = [
     number: 'PHASE 6',
     letter: 'F',
     title: 'UW Decision · Approved with Conditions',
-    subtitle: 'Danielle triages and splits conditions · Hunter and Danielle work in parallel',
-    primaryRole: 'dan',
+    subtitle: 'The processor triages and works every condition — borrower-facing and back-office — to Ready to Send',
+    primaryRole: 'processor',
     steps: [
-      { slug: 'awc-trigger',             title: 'AWC returned — triage & split conditions', role: 'dan', summary: 'Danielle reads the approval letter, then enters and assigns every condition in Arive.', status: 'draft' },
-      { slug: 'borrower-conditions',     title: 'Borrower-facing conditions', role: 'hunter', summary: 'Hunter collects outstanding docs from borrower.', status: 'draft' },
-      { slug: 'docs-and-arive-conditions', title: 'Docs, uploads & Arive conditions', role: 'dan', summary: 'Danielle clears title/appraisal/HOI conditions and re-submits to UW.', status: 'draft' },
+      { slug: 'awc-trigger',             title: 'AWC returned — triage the conditions', role: 'processor', summary: 'The processor reads the approval letter, then enters and tracks every condition in Arive.', status: 'draft' },
+      { slug: 'borrower-conditions',     title: 'Borrower-facing conditions', role: 'processor', summary: 'The processor collects outstanding docs from the borrower.', status: 'draft' },
+      { slug: 'docs-and-arive-conditions', title: 'Docs, uploads & Arive conditions', role: 'processor', summary: 'The processor clears title/appraisal/HOI conditions and re-submits to UW.', status: 'draft' },
     ],
   },
   {
@@ -112,10 +111,10 @@ export const PHASES: Phase[] = [
     number: 'PHASE 7',
     letter: 'G',
     title: 'Clear to Close',
-    subtitle: 'Milestone flips to CTC · Arive notifies Emily',
+    subtitle: 'Milestone flips to CTC · Arive notifies the closer',
     primaryRole: 'system',
     steps: [
-      { slug: 'ctc-issued',              title: 'UW issues clear to close', role: 'system', summary: 'Milestone flips to CTC and Arive notifies Emily. Manual today, with no backstop.', status: 'draft' },
+      { slug: 'ctc-issued',              title: 'UW issues clear to close', role: 'system', summary: 'Milestone flips to CTC and Arive notifies the closer. Manual today, with no backstop.', status: 'draft' },
     ],
   },
   {
@@ -123,13 +122,13 @@ export const PHASES: Phase[] = [
     number: 'PHASE 8',
     letter: 'H',
     title: 'Closing',
-    subtitle: 'Emily owns CTC through funded (UWM files) · Arive: Docs Out → Funded',
-    primaryRole: 'emily',
+    subtitle: 'The closer owns CTC through funded (UWM files) · Arive: Docs Out → Funded',
+    primaryRole: 'closer',
     steps: [
-      { slug: 'review-ctc', title: 'Pick up the file & clear the CD gate', role: 'emily', summary: 'Get oriented, then work the checklist every lender requires before a CD can issue.', status: 'draft' },
-      { slug: 'cd-issued', title: 'CD issued & the 3-day clock', role: 'emily', summary: 'Auto-generated at UWM, requested elsewhere — then TRID timing governs.', status: 'draft' },
-      { slug: 'balance-and-final-cd', title: 'Balance with title & send the final CD', role: 'emily', summary: 'Iterative reconciliation in UClose, LO approval, then the final CD to the borrower.', status: 'draft' },
-      { slug: 'signing-through-funded', title: 'Signing through funded', role: 'emily', summary: 'Realtor schedules signing; Emily tracks docs signed and the funding wire.', status: 'draft' },
+      { slug: 'review-ctc', title: 'Pick up the file & clear the CD gate', role: 'closer', summary: 'Get oriented, then work the checklist every lender requires before a CD can issue.', status: 'draft' },
+      { slug: 'cd-issued', title: 'CD issued & the 3-day clock', role: 'closer', summary: 'Auto-generated at UWM, requested elsewhere — then TRID timing governs.', status: 'draft' },
+      { slug: 'balance-and-final-cd', title: 'Balance with title & send the final CD', role: 'closer', summary: 'Iterative reconciliation in UClose, LO approval, then the final CD to the borrower.', status: 'draft' },
+      { slug: 'signing-through-funded', title: 'Signing through funded', role: 'closer', summary: 'Realtor schedules signing; the closer tracks docs signed and the funding wire.', status: 'draft' },
     ],
   },
   {

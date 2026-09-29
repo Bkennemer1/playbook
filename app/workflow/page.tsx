@@ -57,7 +57,7 @@ export default function WorkflowPage() {
 
       <div className="wf-legend">
         <span className="wf-legend-label">Roles</span>
-        {(['lo','hunter','dan','emily','borrower','system'] as const).map(r => (
+        {(['lo','processor','closer','borrower','system'] as const).map(r => (
           <span key={r} className="wf-legend-item">
             <span className="wf-legend-dot" style={{ background: ROLE_META[r].color }} />
             {ROLE_META[r].label}

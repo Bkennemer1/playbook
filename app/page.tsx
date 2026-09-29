@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useMemo, useState } from 'react';
 import { PHASES, ROLE_META, Role } from '@/lib/phases';
 
-const ROLE_ORDER: Role[] = ['lo', 'hunter', 'dan', 'emily', 'borrower', 'system'];
+const ROLE_ORDER: Role[] = ['lo', 'processor', 'closer', 'borrower', 'system'];
 
 export default function Home() {
   const [query, setQuery] = useState('');

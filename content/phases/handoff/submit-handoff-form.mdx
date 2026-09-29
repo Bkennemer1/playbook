@@ -1,12 +1,12 @@
 <div className="step-page-section">
   <h2>Overview</h2>
-  <p>The handoff is the formal moment a loan moves from LO ownership into the processing pipeline. Disclosures are out (see <a href="/phases/disclosures/send-disclosures">the previous phase</a>) — now the LO hands the file to Hunter and Danielle, who begin working it in parallel: Hunter on everything borrower-facing, Danielle on everything back-office.</p>
-  <p>A good handoff transfers <em>everything the team needs to run without calling you</em>: lender, close date, appraisal status, HOI situation, lock status, what docs are in and what's outstanding, and any file-specific notes. A bad handoff is a one-line "new file for you" that generates four clarifying questions before anyone can start.</p>
+  <p>The handoff is the formal moment a loan moves from LO ownership into the processing pipeline. Disclosures are out (see <a href="/phases/disclosures/send-disclosures">the previous phase</a>) — now the LO hands the file to the processor, who begins working it on two tracks: the borrower-facing side (Pre-W, doc collection, insurance intro) and the back-office side (title, appraisal, contract, CD data).</p>
+  <p>A good handoff transfers <em>everything the processor needs to run without calling you</em>: lender, close date, appraisal status, HOI situation, lock status, what docs are in and what's outstanding, and any file-specific notes. A bad handoff is a one-line "new file for you" that generates four clarifying questions before anyone can start.</p>
 </div>
 
 <div className="step-page-section">
   <h2>How it works today</h2>
-  <p>Today the handoff is a <strong>message the LO sends directly to Hunter and Danielle — via Outlook or Teams.</strong></p>
+  <p>Today the handoff is a <strong>message the LO sends directly to the processor — via Outlook or Teams.</strong></p>
   <p>The standard for what that message must contain, regardless of how you compose it:</p>
   <ul>
     <li>Borrower name(s) and Arive loan number</li>
@@ -16,25 +16,25 @@
     <li>Appraisal status — not needed / not yet ordered / already ordered, plus due dates and payment-link status if ordered</li>
     <li>HOI status — has a provider (with agent info) or needs a quote</li>
     <li>Rate lock status — locked (rate, expiration) / floating / pending</li>
-    <li>Documents received vs. still outstanding — this becomes Hunter's chase list</li>
+    <li>Documents received vs. still outstanding — this becomes the processor's chase list</li>
     <li>VOEs needed or not</li>
     <li>Anything special — credit repair flags, new construction, borrower circumstances</li>
   </ul>
 
   <h3>Use the Pass to Processing form</h3>
-  <p>A <strong>Pass to Processing web form</strong> exists that collects all of the above and generates a formatted, role-split email — Danielle's tasks and Hunter's tasks in separate sections — ready to copy into Outlook. <strong>This is the standard.</strong> Adoption is inconsistent today, and that inconsistency is exactly why files start with missing information. If you're handing off a file, use the form: it's faster than composing from scratch and it can't forget a field.</p>
+  <p>A <strong>Pass to Processing web form</strong> exists that collects all of the above and generates a formatted task list — back-office setup and borrower-facing items in separate sections — ready to copy into Outlook. <strong>This is the standard.</strong> Adoption is inconsistent today, and that inconsistency is exactly why files start with missing information. If you're handing off a file, use the form: it's faster than composing from scratch and it can't forget a field.</p>
 
   <h3>Confirm receipt</h3>
-  <p>Hunter and Danielle are expected to confirm receipt of every handoff — a simple reply. This is inconsistent today; make it consistent. An unconfirmed handoff is a file that might be sitting unowned, and nobody knows.</p>
+  <p>The processor is expected to confirm receipt of every handoff — a simple reply. This is inconsistent today; make it consistent. An unconfirmed handoff is a file that might be sitting unowned, and nobody knows.</p>
 </div>
 
 <div className="callout info">
-  <strong>Once Pipeline Manager ships:</strong> the handoff moves in-app. The LO opens their pipeline view, hits <strong>Pass to Processing</strong> on the loan row, fills the same fields in a modal (with a required processor selection), previews the punch list, and confirms. Tasks generate automatically for Hunter and Danielle, their queues populate within seconds, and the queue itself becomes the notification — no email, no Teams message, no receipt-confirmation problem. The email/Teams channel stays available as a fallback during the transition, but the queue becomes the system of record for "what do I work next."
+  <strong>Once Pipeline Manager ships:</strong> the handoff moves in-app. The LO opens their pipeline view, hits <strong>Pass to Processing</strong> on the loan row, fills the same fields in a modal (with a required processor selection), previews the punch list, and confirms. Tasks generate automatically for the processor, their queue populates within seconds, and the queue itself becomes the notification — no email, no Teams message, no receipt-confirmation problem. The email/Teams channel stays available as a fallback during the transition, but the queue becomes the system of record for "what do I work next."
 </div>
 
 <div className="step-page-section">
   <h2>When to hand off</h2>
-  <p>The trigger: <strong>initial disclosures are sent</strong> and the file is real — under contract (purchase) or committed (refi). Handing off before disclosures means the team starts working a file the LO still owns; handing off long after means Hunter's 48-hour Pre-W clock starts late on a file whose contract clock is already running.</p>
+  <p>The trigger: <strong>initial disclosures are sent</strong> and the file is real — under contract (purchase) or committed (refi). Handing off before disclosures means the processor starts working a file the LO still owns; handing off long after means the 48-hour Pre-W clock starts late on a file whose contract clock is already running.</p>
 </div>
 
 <div className="step-page-section">
@@ -44,23 +44,23 @@
   <p>"Sending you the Johnson file" with nothing else. Every missing field above becomes a question, a delay, or — worse — an assumption. Use the form.</p>
 
   <h3>No receipt confirmation</h3>
-  <p>The LO thinks the file is being worked; Hunter never saw the Teams message. Days pass. Confirm receipt, every file — and LOs, if you haven't gotten a confirmation within a business day, chase it.</p>
+  <p>The LO thinks the file is being worked; the processor never saw the Teams message. Days pass. Confirm receipt, every file — and LOs, if you haven't gotten a confirmation within a business day, chase it.</p>
 
   <h3>Handing off with stale Arive data</h3>
-  <p>The handoff message says locked, Arive says floating. The team works from Arive — make sure Arive reflects reality before you hand off.</p>
+  <p>The handoff message says locked, Arive says floating. The processor works from Arive — make sure Arive reflects reality before you hand off.</p>
 
   <h3>Updates after the handoff</h3>
-  <p>Something changed — new close date, appraisal ordered, lock executed? Update Arive and message Hunter and Danielle directly. Don't re-send a full handoff.</p>
+  <p>Something changed — new close date, appraisal ordered, lock executed? Update Arive and message the processor directly. Don't re-send a full handoff.</p>
 </div>
 
 <div className="step-page-section">
   <h2>What happens next</h2>
-  <p>Hunter starts his <a href="/phases/handoff/pre-underwriting-review">Pre-Underwriting Review</a> — first review within 48 hours. Danielle begins file setup in parallel. From here the file has three owners working their lanes: Hunter borrower-facing, Danielle back-office, LO available for decisions routed to them.</p>
+  <p>The processor starts the <a href="/phases/handoff/pre-underwriting-review">Pre-Underwriting Review</a> — first review within 48 hours — and begins file setup on the back-office side. From here the file has two owners: the processor (borrower-facing and back-office) and the LO, available for decisions routed to them.</p>
 </div>
 
 <div className="step-page-section">
   <h2>Who to ask if you're stuck</h2>
-  <p>Form not loading or acting up: Bryce.<br />What to include for an unusual file: ask Hunter or Danielle what they'd want to know.</p>
+  <p>Form not loading or acting up: Bryce.<br />What to include for an unusual file: ask the processor what they'd want to know.</p>
 </div>
 
 <div className="step-meta">

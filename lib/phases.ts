@@ -39,11 +39,11 @@ export const PHASES: Phase[] = [
     subtitle: 'LO ownership · Arive: Application Intake → Pre-Approved',
     primaryRole: 'lo',
     steps: [
-      { slug: 'lead-intake-qualifying',  title: 'Lead intake & qualifying conversation', role: 'lo', summary: 'First contact with borrower; gather basics; decide soft vs. hard credit.', status: 'draft' },
-      { slug: 'take-application',        title: 'Take the application', role: 'lo', summary: 'Two paths: phone-taken by LO vs. borrower self-serves via online URL.', status: 'draft' },
-      { slug: 'pull-credit',             title: 'Pull credit', role: 'lo', summary: 'Soft or hard pull based on borrower preference; tri-merge in Arive.', status: 'draft' },
-      { slug: 'run-aus',                 title: 'Run DU/LP (AUS)', role: 'lo', summary: 'Submit to AUS, review findings, troubleshoot if needed.', status: 'draft' },
-      { slug: 'issue-preapproval',       title: 'Issue pre-approval letter', role: 'lo', summary: 'Generate and send pre-approval; track who has it.', status: 'draft' },
+      { slug: 'lead-intake-qualifying',  title: 'Lead intake & qualifying conversation', role: 'lo', summary: 'First contact with borrower; gather basics; decide soft vs. hard credit.', status: 'live' },
+      { slug: 'take-application',        title: 'Take the application', role: 'lo', summary: 'Two paths: phone-taken by LO vs. borrower self-serves via online URL.', status: 'live' },
+      { slug: 'pull-credit',             title: 'Pull credit', role: 'lo', summary: 'Soft or hard pull based on borrower preference; tri-merge in Arive.', status: 'live' },
+      { slug: 'run-aus',                 title: 'Run DU/LP (AUS)', role: 'lo', summary: 'Submit to AUS, review findings, troubleshoot if needed.', status: 'live' },
+      { slug: 'issue-preapproval',       title: 'Issue pre-approval letter', role: 'lo', summary: 'Generate and send pre-approval; track who has it.', status: 'live' },
     ],
   },
   {
@@ -54,8 +54,8 @@ export const PHASES: Phase[] = [
     subtitle: 'LO curates the needs list · borrower self-uploads · Arive: Loan Setup',
     primaryRole: 'lo',
     steps: [
-      { slug: 'generate-needs-list',     title: 'Generate & curate the client needs list', role: 'lo', summary: 'Auto-generate the basics; manually add the custom needs Arive misses.', status: 'draft' },
-      { slug: 'borrower-portal-upload',  title: 'Borrower uploads docs via portal', role: 'borrower', summary: 'Self-serve upload against the needs list; items pend until reviewed.', status: 'draft' },
+      { slug: 'generate-needs-list',     title: 'Generate & curate the client needs list', role: 'lo', summary: 'Auto-generate the basics; manually add the custom needs Arive misses.', status: 'live' },
+      { slug: 'borrower-portal-upload',  title: 'Borrower uploads docs via portal', role: 'borrower', summary: 'Self-serve upload against the needs list; items pend until reviewed.', status: 'live' },
     ],
   },
   {
@@ -66,7 +66,7 @@ export const PHASES: Phase[] = [
     subtitle: 'LO preps & sends · e-signed within the TRID window · Arive: Disclosure Sent',
     primaryRole: 'lo',
     steps: [
-      { slug: 'send-disclosures',        title: 'Prep & send initial disclosures', role: 'lo', summary: 'LO owns disclosures — sent and e-signed before the processing handoff.', status: 'draft' },
+      { slug: 'send-disclosures',        title: 'Prep & send initial disclosures', role: 'lo', summary: 'LO owns disclosures — sent and e-signed before the processing handoff.', status: 'live' },
     ],
   },
   {
@@ -77,8 +77,8 @@ export const PHASES: Phase[] = [
     subtitle: 'LO hands off · processor runs Pre-W and starts file setup',
     primaryRole: 'lo',
     steps: [
-      { slug: 'submit-handoff-form',     title: 'Submit processing handoff form', role: 'lo', summary: 'Outlook or Teams message to the processor — use the Pass to Processing form.', status: 'draft' },
-      { slug: 'pre-underwriting-review', title: 'Pre-Underwriting Review (Pre-W)', role: 'processor', summary: 'The processor reviews the file for missing docs, inconsistencies, and borrower needs — first review within 48 hours.', status: 'draft' },
+      { slug: 'submit-handoff-form',     title: 'Submit processing handoff form', role: 'lo', summary: 'Outlook or Teams message to the processor — use the Pass to Processing form.', status: 'live' },
+      { slug: 'pre-underwriting-review', title: 'Pre-Underwriting Review (Pre-W)', role: 'processor', summary: 'The processor reviews the file for missing docs, inconsistencies, and borrower needs — first review within 48 hours.', status: 'live' },
     ],
   },
   {
@@ -89,8 +89,8 @@ export const PHASES: Phase[] = [
     subtitle: 'Processor-owned · Arive: UW Submitted',
     primaryRole: 'processor',
     steps: [
-      { slug: 'file-setup',              title: 'File setup', role: 'processor', summary: 'Title, appraisal, contract review, CD party info, VOEs.', status: 'draft' },
-      { slug: 'uw-prep-and-submission',  title: 'UW prep & submission', role: 'processor', summary: 'Compliance scrub; submit to underwriting.', status: 'draft' },
+      { slug: 'file-setup',              title: 'File setup', role: 'processor', summary: 'Title, appraisal, contract review, CD party info, VOEs.', status: 'live' },
+      { slug: 'uw-prep-and-submission',  title: 'UW prep & submission', role: 'processor', summary: 'Compliance scrub; submit to underwriting.', status: 'live' },
     ],
   },
   {
@@ -101,9 +101,9 @@ export const PHASES: Phase[] = [
     subtitle: 'The processor triages and works every condition — borrower-facing and back-office — to Ready to Send',
     primaryRole: 'processor',
     steps: [
-      { slug: 'awc-trigger',             title: 'AWC returned — triage the conditions', role: 'processor', summary: 'The processor reads the approval letter, then enters and tracks every condition in Arive.', status: 'draft' },
-      { slug: 'borrower-conditions',     title: 'Borrower-facing conditions', role: 'processor', summary: 'The processor collects outstanding docs from the borrower.', status: 'draft' },
-      { slug: 'docs-and-arive-conditions', title: 'Docs, uploads & Arive conditions', role: 'processor', summary: 'The processor clears title/appraisal/HOI conditions and re-submits to UW.', status: 'draft' },
+      { slug: 'awc-trigger',             title: 'AWC returned — triage the conditions', role: 'processor', summary: 'The processor reads the approval letter, then enters and tracks every condition in Arive.', status: 'live' },
+      { slug: 'borrower-conditions',     title: 'Borrower-facing conditions', role: 'processor', summary: 'The processor collects outstanding docs from the borrower.', status: 'live' },
+      { slug: 'docs-and-arive-conditions', title: 'Docs, uploads & Arive conditions', role: 'processor', summary: 'The processor clears title/appraisal/HOI conditions and re-submits to UW.', status: 'live' },
     ],
   },
   {
@@ -114,7 +114,7 @@ export const PHASES: Phase[] = [
     subtitle: 'Milestone flips to CTC · Arive notifies the closer',
     primaryRole: 'system',
     steps: [
-      { slug: 'ctc-issued',              title: 'UW issues clear to close', role: 'system', summary: 'Milestone flips to CTC and Arive notifies the closer. Manual today, with no backstop.', status: 'draft' },
+      { slug: 'ctc-issued',              title: 'UW issues clear to close', role: 'system', summary: 'Milestone flips to CTC and Arive notifies the closer. Manual today, with no backstop.', status: 'live' },
     ],
   },
   {
@@ -125,10 +125,10 @@ export const PHASES: Phase[] = [
     subtitle: 'The closer owns CTC through funded (UWM files) · Arive: Docs Out → Funded',
     primaryRole: 'closer',
     steps: [
-      { slug: 'review-ctc', title: 'Pick up the file & clear the CD gate', role: 'closer', summary: 'Get oriented, then work the checklist every lender requires before a CD can issue.', status: 'draft' },
-      { slug: 'cd-issued', title: 'CD issued & the 3-day clock', role: 'closer', summary: 'Auto-generated at UWM, requested elsewhere — then TRID timing governs.', status: 'draft' },
-      { slug: 'balance-and-final-cd', title: 'Balance with title & send the final CD', role: 'closer', summary: 'Iterative reconciliation in UClose, LO approval, then the final CD to the borrower.', status: 'draft' },
-      { slug: 'signing-through-funded', title: 'Signing through funded', role: 'closer', summary: 'Realtor schedules signing; the closer tracks docs signed and the funding wire.', status: 'draft' },
+      { slug: 'review-ctc', title: 'Pick up the file & clear the CD gate', role: 'closer', summary: 'Get oriented, then work the checklist every lender requires before a CD can issue.', status: 'live' },
+      { slug: 'cd-issued', title: 'CD issued & the 3-day clock', role: 'closer', summary: 'Auto-generated at UWM, requested elsewhere — then TRID timing governs.', status: 'live' },
+      { slug: 'balance-and-final-cd', title: 'Balance with title & send the final CD', role: 'closer', summary: 'Iterative reconciliation in UClose, LO approval, then the final CD to the borrower.', status: 'live' },
+      { slug: 'signing-through-funded', title: 'Signing through funded', role: 'closer', summary: 'Realtor schedules signing; the closer tracks docs signed and the funding wire.', status: 'live' },
     ],
   },
   {
@@ -139,7 +139,7 @@ export const PHASES: Phase[] = [
     subtitle: 'Automated review request at Docs Signed · LO follow-up is inconsistent',
     primaryRole: 'lo',
     steps: [
-      { slug: 'post-close-followup',     title: 'Review request & post-close follow-up', role: 'lo', summary: 'Automated Google review email fires at Docs Signed; everything after is up to the LO.', status: 'draft' },
+      { slug: 'post-close-followup',     title: 'Review request & post-close follow-up', role: 'lo', summary: 'Automated Google review email fires at Docs Signed; everything after is up to the LO.', status: 'live' },
     ],
   },
 ];

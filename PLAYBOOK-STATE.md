@@ -28,7 +28,7 @@ Planning happens in Claude.ai (this project). Execution happens via **CC cloud**
 
 ## Status
 
-**All 9 phases drafted and live at `draft` status.** ~20 step pages.
+**All 9 phases final and published at `live` status.** ~20 step pages.
 
 - Phase 1 — Application & Pre-Approval (5 steps): lead-intake-qualifying, take-application, pull-credit, run-aus, issue-preapproval
 - Phase 2 — Document Intake (2): generate-needs-list, borrower-portal-upload
@@ -52,14 +52,11 @@ Planning happens in Claude.ai (this project). Execution happens via **CC cloud**
 
 ## NEXT ACTIONS (in priority order)
 
-### 1. Review pass → flip draft to live
-Read all 9 phases on the live site as a new hire would. Catch voice issues, factual errors, and places Claude extrapolated. Then flip statuses `draft` → `live` in `lib/phases.ts`.
-
-### 2. Resolve two open Arive questions
+### 1. Resolve two open Arive questions
 - Is there a SEPARATE "Loan Funded" borrower email, or is the "Loan Closed - Congratulations!" review email (fires at **Docs Signed**) the only one? (Bryce earlier said funded email exists; the template we have fires at Docs Signed — reconcile.)
 - Audit which Arive milestones have automated borrower emails attached. Each one found → add to the Borrower Email Automations reference page.
 
-### 3. The improvement analysis (do as its own session)
+### 2. The improvement analysis (do as its own session)
 The payoff. Three systemic themes already visible:
 - **Manual milestone updates = single point of failure, 7x.** Pre-Approved, Disclosure Sent, AWC, CTC, Docs Out, Docs Signed, Funded — all manual. Miss one → notifications/emails/reporting/automation silently fail. Likely explains part of the "webhook reliability gap" (webhook can't fire if the status was never set).
 - **Handoffs depend on someone remembering.** LO→processing, Danielle→Hunter, Danielle→Emily — verbal/ad-hoc, no record, no backstop.

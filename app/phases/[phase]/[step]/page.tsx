@@ -45,8 +45,6 @@ export default async function StepPage({ params }: { params: Promise<{ phase: st
               <span>{phase.number}</span>
               <span className="dot">·</span>
               <span>Owner: {meta.label}</span>
-              <span className="dot">·</span>
-              <span>Status: {step.status}</span>
             </div>
           </div>
           <span
